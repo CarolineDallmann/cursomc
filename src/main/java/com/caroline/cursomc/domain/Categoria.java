@@ -3,14 +3,21 @@ package com.caroline.cursomc.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	// atributos básicos (por padrão privado)
-	private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;// atributos básicos (por padrão privado)
 	private String nome;
 
-	public Categoria() {// construtor: com ele constroi um objeto sem jogar nada para os
+	public Categoria() {// construtor vazio: com ele constroi um objeto sem jogar nada para os
 						// atributos
 	}
 
